@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "702838970297",
+    "project_id": "ocrimg-b9085",
+    "storage_bucket": "ocrimg-b9085.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702838970297:android:6d1ed01fdcd297c3b60868",
+        "android_client_info": {
+          "package_name": "com.example.imagecap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702838970297-d720vr8quqd1mutfrv34t068o0d1chjv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.imagecap",
+            "certificate_hash": "1887a2040543c002f5e154f682ac98db07ad6be4"
+          }
+        },
+        {
+          "client_id": "702838970297-8vgl9tfecd9382n4k1of9oab93gqjvnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARrQieI5gc9GHlhbXASQ8QfKO_W5kdpX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702838970297-8vgl9tfecd9382n4k1of9oab93gqjvnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

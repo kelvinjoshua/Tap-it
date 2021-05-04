@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ImageCap</string>
+    <string name="readings" />
+    <string name="submit" />
+    <string name="location" />
+    <string name="todo" />
+    <string name="date_of_recording" />
+    <string name="current_units" />
+</resources>

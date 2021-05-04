@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".AddReadings">
+    <TextView
+        android:id="@+id/openText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Readings"
+        android:textSize="25sp"
+        android:textColor="@color/light_blue"/>
+
+    <TextView
+        android:paddingTop="25dp"
+        android:id="@+id/volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current_units"
+        android:layout_below="@+id/openText"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/units"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/volume"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:inputType="number"
+        android:visibility="visible"
+        tools:ignore="UnknownId"
+        android:autofillHints="" />
+    <TextView
+        android:paddingTop="80dp"
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of recording"
+        android:layout_below="@+id/volume"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+    <ImageView
+        android:id="@+id/gps"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_below="@id/dateView"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/location"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateView"
+        android:layout_alignStart="@+id/gps"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:text="location"
+        android:id="@+id/gpslocate"
+        android:textColor="@color/light_blue"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="@color/light_blue"
+        android:text="submit"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateView"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/date"
+        android:textStyle="italic"
+        android:textColor="@color/darkG"
+        android:visibility="visible"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gps"
+        android:layout_margin="10dp"
+        android:textColor="@color/darkG"
+        android:textSize="20sp"
+        android:text="trrtrtrtrry"
+        android:textStyle="italic"
+        android:visibility="visible" />
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:outlineSpotShadowColor="@color/blue"
+        tools:ignore="InvalidId" />
+
+</RelativeLayout>
