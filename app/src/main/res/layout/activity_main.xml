@@ -102,7 +102,7 @@
         android:id="@+id/ocr"
         android:layout_margin="8dp"
         android:hint="OCR READING"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:textSize="20sp"
         android:textStyle="italic" />
 

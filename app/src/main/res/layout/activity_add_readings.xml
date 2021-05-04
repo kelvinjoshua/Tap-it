@@ -101,7 +101,6 @@
         android:layout_margin="10dp"
         android:textColor="@color/darkG"
         android:textSize="20sp"
-        android:text="trrtrtrtrry"
         android:textStyle="italic"
         android:visibility="visible" />
     <ProgressBar

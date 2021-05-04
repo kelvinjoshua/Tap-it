@@ -14,8 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageCap">
-        <activity android:name=".AddReadings"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".AddReadings" android:theme="@style/Theme.Design.Light.NoActionBar" ></activity>
+        <activity android:name=".MainActivity" android:theme="@style/Theme.Design.Light.NoActionBar">
             <meta-data
                 android:name="com.google.mlkit.vision.DEPENDENCIES"
                 android:value="ocr" />
