@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.imagecap">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,17 +18,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageCap">
-        <activity android:name=".AddReadings" android:theme="@style/Theme.Design.Light.NoActionBar" ></activity>
-        <activity android:name=".MainActivity" android:theme="@style/Theme.Design.Light.NoActionBar">
-            <meta-data
-                android:name="com.google.mlkit.vision.DEPENDENCIES"
-                android:value="ocr" />
-
+        <activity android:name=".home"></activity>
+        <activity android:name=".SplashScreen" android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".login_form" android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+        <activity
+            android:name=".AddReadings"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+            <meta-data
+                android:name="com.google.mlkit.vision.DEPENDENCIES"
+                android:value="ocr" />
         </activity>
     </application>
 

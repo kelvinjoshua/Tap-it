@@ -76,7 +76,7 @@ public class AddReadings extends AppCompatActivity implements View.OnClickListen
             SaveData data = new SaveData(cust, getText, num, record, getLat, getLong);
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference(Constants.Location);
-            ref.child("User").push().setValue(data);
+            ref.child("").push().setValue(data);
             Toast.makeText(this, "Readings Saved", Toast.LENGTH_LONG).show();
         }
         if (v == gps || v == gpsLocate) {
