@@ -44,9 +44,11 @@ public class AddReadings extends AppCompatActivity implements View.OnClickListen
     @BindView(R.id.location) TextView display;
     @BindView(R.id.gpslocate) TextView gpsLocate;
     @BindView(R.id.progress) ProgressBar progressBar;
+    @BindView(R.id.meterText) EditText meterNumber;
+    private static int Load_delay = 700;
     public double getLat,getLong;
-    public int record,num;
-    public String getText,name,cust;
+    public int record,num ;
+    public String getText,name,cust,meter;
     public static final int REQUEST_CODE = 1; //binary for access permission set to true
     private ResultReceiver resultReceiver;
     @Override
@@ -71,13 +73,24 @@ public class AddReadings extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        meter = meterNumber.getText().toString();
         record = Integer.parseInt(volume.getText().toString());
+
         if (v == Submit) {
-            SaveData data = new SaveData(cust, getText, num, record, getLat, getLong);
+            SaveData data = new SaveData(cust, getText, num, record, getLat, getLong,meter);
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference(Constants.Location);
             ref.child("").push().setValue(data);
             Toast.makeText(this, "Readings Saved", Toast.LENGTH_LONG).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(AddReadings.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            },Load_delay);
+
         }
         if (v == gps || v == gpsLocate) {
             if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -115,7 +128,6 @@ public class AddReadings extends AppCompatActivity implements View.OnClickListen
                     Location location = new Location("providerNA");
                     location.setLatitude(latitude);
                     location.setLongitude(longitude );
-                    //fetchAddressFromLatLong(location);
                 }
 
               progressBar.setVisibility(View.GONE);

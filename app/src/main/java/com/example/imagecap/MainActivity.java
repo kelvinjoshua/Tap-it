@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
@@ -39,20 +43,24 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     @BindView(R.id.detect) Button Detect;
     @BindView(R.id.imageView) ImageView imageView;
     @BindView(R.id.take_picture)Button pictureBtn;
+    @BindView(R.id.logout) ImageView logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.sample);
         ButterKnife.bind(this);
         mRegisterMeterButton.setOnClickListener(this);
         Detect.setOnClickListener(this);
         pictureBtn.setOnClickListener(this);
+        logout.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(MainActivity.this, AddReadings.class);
-        if(v==mRegisterMeterButton){
+        if(v== mRegisterMeterButton){
+
             number=mCustomerNumber.getText().toString();
             name=mCustomerName.getText().toString();
             intent.putExtra("Cus",name);
@@ -65,9 +73,23 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         }
         if(v == pictureBtn){
             dispatchTakePictureIntent();
-           // Toast.makeText(RegisterMeterActivity.this, "button clicked", Toast.LENGTH_SHORT).show();
         }
+
+        if(v == logout){
+            logout();
+        }
+
     }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, login_form.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+
     private void dispatchTakePictureIntent() {
         /*explicit intent to open phone camera*/
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -82,13 +104,14 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
             Bundle extras = data.getExtras();
             imageBitmap = (Bitmap) extras.get("data");//getting the image from the intent
             imageView.setImageBitmap(imageBitmap);
+
         }
     }
+
     private void detectTextFromImage(){
-        //FirebaseVisionTextDetector textDetector = FirebaseVision.getInstance().getVisionTextDetector();
+
         FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(imageBitmap);
         FirebaseVisionTextDetector detector =  FirebaseVision.getInstance().getVisionTextDetector();
-        //FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
 
         detector.detectInImage(firebaseVisionImage).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
             @Override

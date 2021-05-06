@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
     @BindView(R.id.splash_screen_message) TextView slogan;
     @BindView(R.id.tap_it_logo) TextView Company;
     Animation Top,Bottom;
-    private static int Load_delay = 4000;
+    private static int Load_delay = 3500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

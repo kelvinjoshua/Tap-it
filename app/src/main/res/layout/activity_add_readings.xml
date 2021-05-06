@@ -4,22 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
     tools:context=".AddReadings">
     <TextView
         android:id="@+id/openText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/light_blue"
+        android:paddingLeft="30dp"
+        android:layout_marginBottom="33dp"
+        android:paddingTop="20dp"
         android:text="Readings"
+        android:fontFamily="@font/nunito_sans_bold"
         android:textSize="25sp"
-        android:textColor="@color/light_blue"/>
+        android:textColor="@color/white"/>
+
+    <View
+        android:id="@+id/wave"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:background="@drawable/ic_wave__1_"
+        android:layout_marginTop="60dp"
+        />
 
     <TextView
-        android:paddingTop="25dp"
+        android:paddingTop="35dp"
         android:id="@+id/volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current_units"
+        android:layout_marginLeft="20dp"
+        android:text="Current units"
+        android:fontFamily="@font/nunito_sans_light"
         android:layout_below="@+id/openText"
         android:textSize="20sp"
         android:textColor="@color/black"/>
@@ -29,9 +43,36 @@
         android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/volume"
-        android:layout_marginStart="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:inputType="number"
+        android:visibility="visible"
+        tools:ignore="UnknownId"
+        android:autofillHints="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/meterNo"
+        android:layout_marginLeft="20dp"
+
+        android:layout_below="@+id/units"
+        android:text="Meter Number"
+        android:fontFamily="@font/nunito_sans_light"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/meterText"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/meterNo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -39,13 +80,16 @@
         android:visibility="visible"
         tools:ignore="UnknownId"
         android:autofillHints="" />
+
     <TextView
-        android:paddingTop="80dp"
+        android:paddingTop="65dp"
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date of recording"
-        android:layout_below="@+id/volume"
+        android:fontFamily="@font/nunito_sans_light"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/meterNo"
         android:textSize="20sp"
         android:textColor="@color/black"/>
     <ImageView
@@ -53,7 +97,8 @@
         android:layout_width="34dp"
         android:layout_height="34dp"
         android:layout_below="@id/dateView"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
         android:src="@drawable/location"
         android:contentDescription="@string/todo" />
 
@@ -63,8 +108,9 @@
         android:layout_below="@id/dateView"
         android:layout_alignStart="@+id/gps"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:text="location"
+        android:fontFamily="@font/nunito_sans_bold"
         android:id="@+id/gpslocate"
         android:textColor="@color/light_blue"
         android:textSize="20sp" />
@@ -72,20 +118,25 @@
     <Button
         android:id="@+id/submit"
         android:layout_width="155dp"
+        android:layout_marginStart="20dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/round"
         android:backgroundTint="@color/light_blue"
         android:text="submit"
+        android:fontFamily="@font/nunito_sans_bold"
         android:textColor="@color/white"
         android:textSize="20sp"
         />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dateView"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
         android:layout_below="@+id/date"
         android:textStyle="italic"
         android:textColor="@color/darkG"
@@ -98,7 +149,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/gps"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/darkG"
         android:textSize="20sp"
         android:textStyle="italic"
@@ -109,7 +161,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone"
-        android:outlineSpotShadowColor="@color/blue"
         tools:ignore="InvalidId" />
 
 </RelativeLayout>

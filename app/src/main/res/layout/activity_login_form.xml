@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:text="Welcome back"
+        android:fontFamily="@font/nunito_sans_bold"
         android:textAlignment="center"
         android:textSize="35sp"
         android:layout_marginTop="60dp"/>
@@ -44,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="Sign-in"
+                android:fontFamily="@font/nunito_sans_bold"
                 android:textAlignment="center"
                 android:textColor="@color/light_blue"
                 android:textSize="28sp"
@@ -55,7 +57,6 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
@@ -63,6 +64,7 @@
                     android:layout_marginVertical="8dp"
                     android:layout_marginTop="4dp"
                     android:hint="E-mail"
+                    android:drawableLeft="@drawable/outline_email_24"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:visibility="visible"
@@ -78,6 +80,7 @@
                     android:inputType="textPassword"
                     android:textAlignment="center"
                     android:textSize="20sp"
+                    android:drawableLeft="@drawable/outline_lock_24"
                     android:visibility="visible"
                     tools:ignore="RtlHardcoded"
                     android:autofillHints="" />
@@ -91,8 +94,10 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
+                android:drawableBottom="@drawable/round"
                 android:backgroundTint="@color/light_blue"
                 android:text="sign in"
+                android:fontFamily="@font/nunito_sans_bold"
                 android:clipToPadding="true"
                 android:textAllCaps="true"
                 android:textColor="@color/white"

@@ -8,14 +8,16 @@ public  class SaveData {
     int phoneNumber;
     double Longitude;
     double Latitude;
+    String MeterNumber;
     
-    public SaveData(String customerName, String Date, int phoneNumber, int Volume, double Longitude, double Latitude) {
+    public SaveData(String customerName, String Date, int phoneNumber, int Volume, double Longitude, double Latitude,String MeterNumber) {
         this.customerName = customerName;
         this.Date = Date;
         this.phoneNumber = phoneNumber;
         this.VolumeConsumed = Volume;
         this.Latitude = Latitude;
         this.Longitude = Longitude;
+        this.MeterNumber = MeterNumber;
     }
 
     public String getCustomerName() {
@@ -40,5 +42,9 @@ public  class SaveData {
 
     public double getLatitude() {
         return Latitude;
+    }
+
+    public String getMeterNumber() {
+        return MeterNumber;
     }
 }
